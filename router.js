@@ -26,14 +26,16 @@ router.post('/login',function(req,res,next){
         }
         else if(result.length !== 0)
         {
-           // console.log(result)
+            // console.log(result[0].steam_id)
             req.session.username = body.username
+            req.session.steamid = result[0].steam_id
             console.log('user login')
             
             return res.status(200).json({
                 err_code:0,
                 message:'Login success!',
-                username:body.username
+                username:body.username,
+                steamid:result[0].steam_id
             })
         }
     })
@@ -83,6 +85,7 @@ router.get('/logout',function(req,res){
     })
 })
 
+//绑定STEAM账号
 router.get('/loginwithsteam',passport.authenticate('steam',{ failureRedirect: '/' }),function(req,res){
     var username =  req.session.username
     console.log(req.session)
@@ -94,8 +97,14 @@ router.get('/loginwithsteam/return',
     res.redirect('/');
   });
 
+
 router.get('/search',function(req,res){
 var body = req.body
 
+})
+
+router.post('/updatematches',function(req,res,next){
+    var body = req.body;
+    JSON.parse(body)
 })
 module.exports = router

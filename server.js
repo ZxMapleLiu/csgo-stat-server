@@ -10,8 +10,8 @@ var session = require('express-session');
 var router = require('./router.js')
 
 passport.use(new SteamStrategy({
-  returnURL: 'http://localhost:3000/auth/steam/return',
-  realm: 'http://localhost:3000/',
+  returnURL: 'http://localhost:8080/api/loginwithsteam/return',
+  realm: 'http://localhost:8080/',
   apiKey: '46257AD6F8FBB94C70E3B66BF1BC8164'
 },
 function(identifier, profile, done) {
