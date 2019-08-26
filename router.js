@@ -443,31 +443,36 @@ router.get('/match',function(req,res){
                         }
                         playerRecord.player5 = result[0]
                     })
-                    dbcfg.query(queryPlayerInfoIdSql, matchInfoId.team_b_player1_info_id,function(err,result){
+                    queryPlayerInfoIdSql = "SELECT * FROM player_record_id WHERE player_record_id = \'"+matchInfoId.team_b_player1_info_id+"\'"
+                    dbcfg.query(queryPlayerInfoIdSql,function(err,result){
                         if(err){
                             console.log(err)
                         }
                         playerRecord.player6 = result[0]
                     })
-                    dbcfg.query(queryPlayerInfoIdSql, matchInfoId.team_b_player2_info_id,function(err,result){
+                    queryPlayerInfoIdSql = "SELECT * FROM player_record_id WHERE player_record_id = \'"+matchInfoId.team_b_player2_info_id+"\'"
+                    dbcfg.query(queryPlayerInfoIdSql,function(err,result){
                         if(err){
                             console.log(err)
                         }
                         playerRecord.player7 = result[0]
                     })
-                    dbcfg.query(queryPlayerInfoIdSql, matchInfoId.team_b_player3_info_id,function(err,result){
+                    queryPlayerInfoIdSql = "SELECT * FROM player_record_id WHERE player_record_id = \'"+matchInfoId.team_b_player3_info_id+"\'"
+                    dbcfg.query(queryPlayerInfoIdSql,function(err,result){
                         if(err){
                             console.log(err)
                         }
                         playerRecord.player8 = result[0]
                     })
-                    dbcfg.query(queryPlayerInfoIdSql, matchInfoId.team_b_player4_info_id,function(err,result){
+                    queryPlayerInfoIdSql = "SELECT * FROM player_record_id WHERE player_record_id = \'"+matchInfoId.team_b_player4_info_id+"\'"
+                    dbcfg.query(queryPlayerInfoIdSql,function(err,result){
                         if(err){
                             console.log(err)
                         }
                         playerRecord.player9 = result[0]
                     })
-                    dbcfg.query(queryPlayerInfoIdSql, matchInfoId.team_b_player5_info_id,function(err,result){
+                    queryPlayerInfoIdSql = "SELECT * FROM player_record_id WHERE player_record_id = \'"+matchInfoId.team_b_player5_info_id+"\'"
+                    dbcfg.query(queryPlayerInfoIdSql,function(err,result){
                         if(err){
                             console.log(err)
                         }
